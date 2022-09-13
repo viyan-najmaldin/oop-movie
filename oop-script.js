@@ -8,7 +8,7 @@ class App {
     // runSearchNavbar();
   }
 }
-
+const ApiKey = `${process.env.APP_API_KEY}`;
 class APIService {
   static TMDB_BASE_URL = "https://api.themoviedb.org/3";
   static async fetchMovies(Filterby = `now_playing`) {
@@ -60,21 +60,21 @@ class APIService {
   }
 
   static async fetchSerch(term) {
-    const url = `${this.TMDB_BASE_URL}/search/movie?api_key=cdd1bcf1945e1032f0690000003ddd99&query=${term}`;
+    const url = `${this.TMDB_BASE_URL}/search/movie?${ApiKey}=${term}`;
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
     return data.results.map((movie) => new Movie(movie));
   }
   static async fetchGenres(TheId) {
-    const url = `${this.TMDB_BASE_URL}/discover/movie?api_key=cdd1bcf1945e1032f0690000003ddd99&with_genres=${TheId}`;
+    const url = `${this.TMDB_BASE_URL}/discover/movie?${ApiKey}&with_genres=${TheId}`;
     const response = await fetch(url);
     const data = await response.json();
     return data.results.map((movie) => new Movie(movie));
   }
 
   static _constructUrl(path) {
-    return `${this.TMDB_BASE_URL}/${path}?api_key=cdd1bcf1945e1032f0690000003ddd99`;
+    return `${this.TMDB_BASE_URL}/${path}?${ApiKey}`;
     // we removed the equal sign with the old key at the last
   }
 }
@@ -613,11 +613,7 @@ const overlayContent = document.getElementById("overlay-content");
 function openNav(movie) {
   let id = movie.id;
   console.log(movie);
-  fetch(
-    "https://api.themoviedb.org/3/movie/" +
-      id +
-      "/videos?api_key=cdd1bcf1945e1032f0690000003ddd99"
-  )
+  fetch("https://api.themoviedb.org/3/movie/" + id + "/videos?" + ApiKey)
     .then((res) => res.json())
     .then((videoData) => {
       // console.log(videoData);
