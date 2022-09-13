@@ -630,8 +630,8 @@ function openNav(movie) {
             if (site == "YouTube") {
               if (type == "Trailer") {
                 console.log(name);
-                embed.push(`
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+                embed.push(` 
+                <iframe width="600" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
             `);
               }
             }
@@ -640,10 +640,7 @@ function openNav(movie) {
           var content = `
             <br><br>
           <h3 class="no-results text-start">Trailer :</h3>
-          
-          
-          ${embed.join("")}
-          <br/>         `;
+          ${embed.join("")}      `;
           overlayContent.innerHTML = content;
         } else {
           overlayContent.innerHTML = `<h1 class="no-results">   </h1>`;
