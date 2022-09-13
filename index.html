@@ -4,16 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+   
     <link rel="stylesheet" href="style.css">
+    
     <title>Movie</title>
 </head>
 
-<body>
-    <div id="container" class="container">
-    </div>
-    <script src="./oop-script.js"></script>
+<body class="background-page">
+
+    <nav class="navbar navbar-expand-lg navbar-light purple-backgound ">
+        <div class="container-fluid">
+          <h2 class="navbar-brand dark-color logo">OOP MOVIE</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a id="Navbar-actor" class="nav-link text-white" href="#">Actor</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="genres-navbar" class="nav-link dropdown-toggle text-white" id="genres-navbar" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  genres
+                </a>
+                <!--Qestion    does we have Category in our Api -->
+                <ul id="genres-navbar-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 
+                </ul>
+
+
+                <li class="nav-item dropdown">
+                    <a id="Filter-Navbar" class="nav-link  text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter <i class="bi bi-filter"></i>
+                    </a>
+                    <!--Qestion    does we have Category in our Api -->
+                    <ul id="filterNavbarDropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a name="Popular" class="dropdown-item" href="#">Popular
+                    </a></li>
+                    <li><hr class="dropdown-divider"></li>
+                      <li><a name="Top-rated" class="dropdown-item" href="#">Top Rated</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a name="now-playing" class="dropdown-item" href="#">Now Playing</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a name="up-coming" class="dropdown-item" href="#">Up Coming</a></li>
+                    </ul>
+
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" id="about-navbar" href="#" tabindex="-1" aria-disabled="true">About</a>
+              </li>
+
+
+            </ul>
+            <form class="d-flex">
+              <input id="Navbar-search" class="form-control me-2" type="search" placeholder="Search for Movie" aria-label="Search" >
+              <button id="Navbar-search-button" class="btn btn-outline-success text-white" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      <div id="single-page-actor" class="d-none">
+        
+        <div class="row aa text-center">
+            
+            <div class="col-md-8 pt-3 act-data">
+              <h2 id="single-actor-name" class="d-inline mb-5"></h2>
+              
+              <p class="bold" >Gender : <span class="not-bold" id="gender"></span> </p>
+             <h5>Known As :</h5>
+              <p id="known-as"></p>
+              <p class="bold" >Popularity : <span class="not-bold" id="popularity"></span> </p>
+               <br> <br> <hr>
+                
+              <h5 class="">Biography : </h5>
+              <p id="actor-biography" class=""></p>
+            </div>
+            <div class="col-md-4 act-img">
+              <img id="single-actor-backdrop" class="w-100" src=""> 
+            </div>
+          </div>
+          
+          <h3 class="p-3">Movies :  </h3>
+          <div id="actors-movies" class="movies px-2"> </div>
+
+       </div>
+
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div id="ss" class="carousel-inner">
+           
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+       <div id="container" class="container movies">
+          
+       </div>
+
+    <div id="single-page" class="d-none m-0">
+       </div>
+       <div id="actor-name" class="movies-actor d-none px-2"> </div>
+
+
+       <div id="myTrailer" class="overlay">
+        <div class="overlay-content" id="overlay-content"></div>
+      </div>
+      
+       
+       
+       <div id="all-actors" class="all-actors p-3 d-none"></div>
+    
+
+
+    <footer class="purple-backgound mb-0 mt-lg-3 p-5 text-center text-white">
+        
+        <div class="">This Website is coded by Viyan Najmadin and Hiba Ithawi and Nawal Muhammed</div>
+        <div class="pt-1 d-flex justify-content-center gap-3">
+
+            <a href="https://github.com/viyan-najmaldin" class="github"><i class="bi bi-github"> Viyan</i></a>
+            <a href="https://github.com/haboosh92" class="github"><i class="bi bi-github"> Hiba</i></a>
+            <a href="https://github.com/nawalkanabee" class="github"><i class="bi bi-github"> Nawal</i></a>
+            
+           
+        </div>
+    </footer>
+    
     <!-- <script type="text/javascript" src="script.js"></script> -->
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- <script src="./actors-page.js"></script> -->
+    <script src="./oop-script.js"></script>
 </body>
 
 </html>
