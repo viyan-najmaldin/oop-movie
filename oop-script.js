@@ -474,9 +474,9 @@ class AboutPage {
       <div><div> This is a movie website </div>
       <div>where it shows movies, their casts, ratings, trailers, related movies, genres, and so on.<div>
       This website uses The Movie DB API:
-     <a href="https://api.themoviedb.org/">https://api.themoviedb.org/3</a> 
+     <a class="linkkk" href="https://api.themoviedb.org/">https://api.themoviedb.org/3</a> 
      <br> link to my repository :
-     <a href="#">Github</a> 
+     <a class="linkkk" href="https://github.com/viyan-najmaldin/oop-movie">Github</a> 
       </div>
       
       `;
@@ -636,7 +636,7 @@ function openNav(movie) {
           var content = `
             <br><br>
           <h3 class="no-results text-start">Trailer :</h3>
-          <br/>
+          
           
           ${embed.join("")}
           <br/>         `;

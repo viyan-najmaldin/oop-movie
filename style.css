@@ -32,13 +32,24 @@ body{
     font-size: 25px;
 }
 
+.logo:hover{
+    color: #d7b3ff !important; 
+  }
 
-.github{
+
+.linkk{
     text-decoration: none;
     color: #fff;
 }
-.github:hover{
+ .linkk:hover{
     color: #d7b3ff;
+}
+.linkkk{
+    text-decoration: none;
+    color: #d7b3ff;
+}
+ .linkkk:hover{
+    color: #fff;
 }
 
 .purple-backgound{
@@ -258,6 +269,7 @@ height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 3rem;
 }
 
 
@@ -364,7 +376,7 @@ height: 400px;
         width: 50%;
        }
        footer{
-        font-size: 15px !important;
+        font-size: 12px !important;
         margin-top:3% ;
         }
 
@@ -487,6 +499,8 @@ font-size: 10px !important;
     .logo {
         font-size: 20px;
     }
+    
+   
     .navbar-toggler {
         padding: 2px;
     }
