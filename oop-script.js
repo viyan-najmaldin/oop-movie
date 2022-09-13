@@ -8,7 +8,7 @@ class App {
     // runSearchNavbar();
   }
 }
-const ApiKey = `${process.env.APP_API_KEY}`;
+const ApiKey = `${process.env.REACT_APP_API_KEY}`;
 class APIService {
   static TMDB_BASE_URL = "https://api.themoviedb.org/3";
   static async fetchMovies(Filterby = `now_playing`) {
